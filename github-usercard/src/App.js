@@ -1,35 +1,21 @@
 import React from 'react';
-import ReactDOM from "react-dom";
 import './App.css';
 import axios from 'axios';
-import { UserCard } from './components/UserCard';
-
-// function App() {
-//   return (
-//     <div className="App">
-//       <header className="App-header">
-//         <h1>Testing</h1>
-//       </header>
-//     </div>
-//   );
-// }
-
-// export default App;
-
+import UserCard  from './components/UserCard';
 
 class App extends React.Component {
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         this.state = {
-            data: [],
+            data: {},
             
         }
     };
 
 
-    handleUserChange = e => {
-        this.setState({ userCard: e.target.value});
-    };
+    // handleUserChange = e => {
+    //     this.setState({ userCard: e.target.value});
+    // };
 
     componentDidMount() {
       this.getUserData();
@@ -40,7 +26,7 @@ class App extends React.Component {
         //handle success
         .then(response => {
             console.log(response.data);
-            
+            this.setState({data: response.data})
   
           })
 
@@ -54,7 +40,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                <input onChange={this.handleUserChange} placeholder="search users" />
+                {/* <input onChange={this.handleUserChange} placeholder="search users" /> */}
                 <h1>Testing</h1>
                 <UserCard user={this.state.data} />
             </div>
