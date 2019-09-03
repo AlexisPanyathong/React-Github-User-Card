@@ -8,7 +8,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       data: {},
-      followers: {}
+      followers: []
     };
 
   }
@@ -38,9 +38,9 @@ class App extends React.Component {
 
         <UserCard user={this.state.data} />
 
-        {/* {this.state.followers.map(follower => {
+        {this.state.followers.map(follower => (
           <FollowerCard follower={follower} />
-        })} */}
+        ))}
 
       </div>
     )

@@ -9,6 +9,7 @@ export default class FollowerCard extends React.Component {
         return (
             <div className="follower-card">
                 {this.props.follower.login}
+                <img src={this.props.follower.avatar_url} />
             </div>
         )
     }

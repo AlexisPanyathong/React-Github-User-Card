@@ -1,4 +1,5 @@
 import React from 'react';
+import { Card, Name, Bio, Followers, Following, Location } from './StyledWidgets';
 
 export default class UserCard extends React.Component {
     constructor(props) {
@@ -8,12 +9,29 @@ export default class UserCard extends React.Component {
     render() {
         return (
             <div className="user-card">
-                {this.props.user.name}
-                <img src={this.props.user.avatar_url} alt="img of Alexis" />
-                {this.props.user.bio}
-                {this.props.user.followers}
-                {this.props.user.following}
-                {this.props.user.location}
+                <Card>
+                    <Name>
+                        {this.props.user.name}
+                    </Name>
+                    <img src={this.props.user.avatar_url} alt="img of Alexis" />
+
+                    <Bio>
+                        {this.props.user.bio}
+                    </Bio>
+
+                    <Followers>
+                        Followers: {this.props.user.followers}
+                    </Followers>
+
+                    <Following>
+                        Following: {this.props.user.following}
+                    </Following>
+
+                    <Location>
+                        {this.props.user.location}
+                    </Location>
+                    
+                </Card>
             </div>
         );
     }
