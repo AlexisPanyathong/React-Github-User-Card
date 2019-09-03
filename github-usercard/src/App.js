@@ -16,9 +16,9 @@ class App extends React.Component {
     };
 
 
-    // handleUserChange = e => {
-    //     this.setState({ userCard: e.target.value});
-    // };
+    handleUserChange = e => {
+        this.setState({ userCard: e.target.value});
+    };
 
     componentDidMount() {
       this.getUserData();
@@ -55,7 +55,7 @@ class App extends React.Component {
     render() {
         return (
             <div>
-                {/* <input onChange={this.handleUserChange} placeholder="search users" /> */}
+                <input onChange={this.handleUserChange} placeholder="search users" />
                 
                 <UserCard user={this.state.data} />
                 <Header>Followers:</Header>
