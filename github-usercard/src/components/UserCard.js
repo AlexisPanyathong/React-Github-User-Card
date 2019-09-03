@@ -2,9 +2,7 @@ import React from 'react';
 import { Card, Name, Bio, Followers, Following, Location } from './StyledWidgets';
 
 export default class UserCard extends React.Component {
-    constructor(props) {
-        super(props);
-    }
+   
 
     render() {
         return (

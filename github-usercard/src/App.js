@@ -3,6 +3,9 @@ import axios from 'axios';
 import UserCard from './components/UserCard';
 import FollowerCard from './components/FollowerCard';
 
+import { Header } from './components/StyledWidgets';
+import './App.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -34,9 +37,10 @@ class App extends React.Component {
   render() {
     return (
       <div className="App">
-        <h1>Welcome!</h1>
 
         <UserCard user={this.state.data} />
+
+        <Header><h1>Followers:</h1></Header>
 
         {this.state.followers.map(follower => (
           <FollowerCard follower={follower} />
