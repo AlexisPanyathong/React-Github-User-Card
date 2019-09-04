@@ -1,4 +1,4 @@
-body::after {
+/* body::after {
 	content: "";
 	background-image: url('./imgs/chelsea-glitter-plain-textured-wallpaper-soft-grey-silver-p2640-20278_thumb.jpeg');
 	opacity: 0.45;
@@ -9,4 +9,4 @@ body::after {
 	position: absolute;
 	z-index: -1; 
 	background-attachment: fixed;
-}
+} */

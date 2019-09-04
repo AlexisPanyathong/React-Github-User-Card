@@ -9,11 +9,14 @@ export const Card = styled.div`
     margin-bottom: 50px;
     box-shadow: 5px 5px 5px grey;
     background-color: #7A0629;
+    width: 70%;
+    height: 600px;
 
     img {
-        width: 50%;
+        width: 30%;
         margin: 0 auto;
-        box-shadow: 5px 5px 5px grey;
+        object-fit: contain;
+        height: 260px;
 
     }
 `;
@@ -32,19 +35,31 @@ export const Bio = styled.p`
     font-size: 25px;   
 `;
 
-export const Followers = styled.p`
+export const Info = styled.div`
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 0 auto;
     text-align: center;
     color: #FFFFFF;
     font-size: 20px;   
 `;
 
-export const Following = styled.p`
+export const Followers = styled.div`
+    display: flex;
+`;
+
+export const Following = styled.div`
+    display: flex;
+    margin-top: 10px;
     text-align: center;
     color: #FFFFFF;
     font-size: 20px;
 `;
 
-export const Location = styled.p`
+export const Location = styled.div`
+    display: flex;
+    margin-top: 10px;
     text-align: center;
     color: #FFFFFF;
     font-size: 20px;
@@ -59,12 +74,14 @@ export const Follower = styled.div`
     margin-bottom: 60px;
     background-color: #2C2C2C;
     box-shadow: 4px 4px 4px;
+    width: 60%;
 
     img {
-        width: 40%;
+        width: 30%;
         margin: 0 auto;
-        margin-bottom: 80px;
-        box-shadow: 4px 4px 4px;
+        object-fit: contain;
+        height: 260px;
+        margin-bottom: 60px;
 
     }
 `;

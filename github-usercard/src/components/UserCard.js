@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Name, Bio, Followers, Following, Location } from './StyledWidgets';
+import { Card, Name, Bio, Info, Followers, Following, Location } from './StyledWidgets';
 
 export default class UserCard extends React.Component {
    
@@ -17,17 +17,19 @@ export default class UserCard extends React.Component {
                         {this.props.user.bio}
                     </Bio>
 
-                    <Followers>
-                        Followers: {this.props.user.followers}
-                    </Followers>
+                    <Info>
+                        <Followers>
+                            Followers: {this.props.user.followers}
+                        </Followers>
 
-                    <Following>
-                        Following: {this.props.user.following}
-                    </Following>
-
-                    <Location>
-                        {this.props.user.location}
-                    </Location>
+                        <Following>
+                            Following: {this.props.user.following}
+                        </Following>
+                    
+                        <Location>
+                            {this.props.user.location}
+                        </Location>
+                    </Info>
                     
                 </Card>
             </div>
