@@ -1,20 +1,19 @@
 import React from 'react';
-import { CardTwo, FollowerName } from './StyledWidgets';
+import { Follower, FollowerName } from './StyledWidgets';
 
 export default class FollowerCard extends React.Component {
-    constructor(props) {
-        super(props);
-        
-    }
+    
 
     render() {
         return (
             <div className="follower-card">
-                <CardTwo>
+
+                <Follower>
                     <FollowerName>
-                        {this.props.info.login}
+                        {this.props.follower.login}
                     </FollowerName>
-                </CardTwo>
+                    <img src={this.props.follower.avatar_url} alt="imgs of my followers" />
+                </Follower>
             </div>
         )
     }

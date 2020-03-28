@@ -1,56 +1,53 @@
 import React from 'react';
-import './App.css';
 import axios from 'axios';
-import UserCard  from './components/UserCard';
+import UserCard from './components/UserCard';
 import FollowerCard from './components/FollowerCard';
+
 import { Header } from './components/StyledWidgets';
+import './App.css';
 
 class App extends React.Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            data: {},
-            followersData: {}
-            
-        }
+  constructor(props) {
+    super(props);
+    this.state = {
+      data: {},
+      followers: []
     };
+
+  }
 
 
     handleUserChange = e => {
         this.setState({ userCard: e.target.value});
     };
 
-    componentDidMount() {
-      this.getUserData();
-    }
-    
-    getUserData() {
-      axios.get(`https://api.github.com/users/AlexisPanyathong`)
-        //handle success
-        .then(response => {
-            // console.log(response.data);
-            this.setState({data: response.data})
-  
-          })
-
-          //handle error
-          .catch(err => {
-              console.log(`Error, please try again.`, err);
-          });
-
-      axios.get(`https://api.github.com/users/AlexisPanyathong/followers`)
-      //handle success
-      .then(response => {
-        console.log(response.data);
-        this.setState({followersData: response.data})
+  componentDidMount() {
+    axios.get('https://api.github.com/users/AlexisPanyathong')
+      .then(res => {
+        this.setState({ data: res.data})
+        console.log(res)
       })
+      .catch(err => console.log('Error, please try again', err));
 
-      //handle error
-      .catch(err => {
-        console.log(`Error, please try again!`, err);
-      })
-
+      axios.get('https://api.github.com/users/AlexisPanyathong/followers')
+        .then(res => {
+          this.setState({ followers: res.data})
+          console.log('followers', res)
+        })
+        .catch(err => console.log('Error on followers', err))
   }
+
+
+
+
+  render() {
+    return (
+      <div className="App">
+
+        <UserCard user={this.state.data} />
+
+        <Header><h1>Followers:</h1></Header>
+
 
     render() {
         return (
@@ -65,7 +62,14 @@ class App extends React.Component {
             </div>
         );
 
-    }
+        {this.state.followers.map(follower => (
+          <FollowerCard follower={follower} />
+        ))}
+
+
+      </div>
+    )
+  }
 }
 
 export default App;

@@ -1,28 +1,38 @@
 import React from 'react';
-import { Card, Name, Image, Location, Bio } from "./StyledWidgets";
-
+import { Card, Name, Bio, Info, Followers, Following, Location } from './StyledWidgets';
 
 export default class UserCard extends React.Component {
-    constructor(props) {
-        super(props);
-
-    }
-
+   
+    // Test
     render() {
         return (
-            
             <div className="user-card">
                 <Card>
-                    <Name>{this.props.user.name}</Name>
-                    <Image><img src={this.props.user.avatar_url} alt="img of Alexis" width="200" height="200" border="1px solid red"/></Image>
-                    <Location>Location: {this.props.user.location}</Location>
-                    <Bio>Bio: {this.props.user.bio}</Bio>
+                    <Name>
+                        {this.props.user.name}
+                    </Name>
+                    <img src={this.props.user.avatar_url} alt="img of Alexis" />
+
+                    <Bio>
+                        {this.props.user.bio}
+                    </Bio>
+
+                    <Info>
+                        <Followers>
+                            Followers: {this.props.user.followers}
+                        </Followers>
+
+                        <Following>
+                            Following: {this.props.user.following}
+                        </Following>
+                    
+                        <Location>
+                            {this.props.user.location}
+                        </Location>
+                    </Info>
+                    
                 </Card>
             </div>
-
-        ); 
+        );
     }
-
-    
 }
-
