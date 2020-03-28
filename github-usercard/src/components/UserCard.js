@@ -3,7 +3,7 @@ import { Card, Name, Bio, Info, Followers, Following, Location } from './StyledW
 
 export default class UserCard extends React.Component {
    
-
+    // Test
     render() {
         return (
             <div className="user-card">
