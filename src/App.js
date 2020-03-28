@@ -40,13 +40,13 @@ class App extends React.Component {
 
 
 
-  render() {
-    return (
-      <div className="App">
+  // render() {
+  //   return (
+  //     <div className="App">
 
-        <UserCard user={this.state.data} />
+  //       <UserCard user={this.state.data} />
 
-        <Header><h1>Followers:</h1></Header>
+  //       <Header><h1>Followers:</h1></Header>
 
 
     render() {
@@ -59,17 +59,18 @@ class App extends React.Component {
                 {/* {this.state.followersData.map(follower => (
                   <FollowerCard follower={follower} />
                 ))} */}
+                {this.state.followers.map(follower => (
+                <FollowerCard follower={follower} />
+        ))}
             </div>
         );
 
-        {this.state.followers.map(follower => (
-          <FollowerCard follower={follower} />
-        ))}
+        
 
 
-      </div>
-    )
+      // </div>
+    }
   }
-}
+
 
 export default App;
