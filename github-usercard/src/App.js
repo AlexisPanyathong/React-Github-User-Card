@@ -16,6 +16,11 @@ class App extends React.Component {
 
   }
 
+
+    handleUserChange = e => {
+        this.setState({ userCard: e.target.value});
+    };
+
   componentDidMount() {
     axios.get('https://api.github.com/users/AlexisPanyathong')
       .then(res => {
@@ -34,6 +39,7 @@ class App extends React.Component {
 
 
 
+
   render() {
     return (
       <div className="App">
@@ -42,9 +48,24 @@ class App extends React.Component {
 
         <Header><h1>Followers:</h1></Header>
 
+
+    render() {
+        return (
+            <div>
+                <input onChange={this.handleUserChange} placeholder="search users" />
+                
+                <UserCard user={this.state.data} />
+                <Header>Followers:</Header>
+                {/* {this.state.followersData.map(follower => (
+                  <FollowerCard follower={follower} />
+                ))} */}
+            </div>
+        );
+
         {this.state.followers.map(follower => (
           <FollowerCard follower={follower} />
         ))}
+
 
       </div>
     )
